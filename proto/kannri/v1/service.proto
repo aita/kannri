@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package kannri.v1;
+
+option go_package = "github.com/aita/kannri/kannripb/kanri/v1";
+
+enum ServiceStatus {
+  SERVICE_STATUS_UNSPECIFIED = 0;
+  SERVICE_STATUS_STOPPED = 1;
+  SERVICE_STATUS_STARTING = 2;
+  SERVICE_STATUS_RUNNING = 3;
+  SERVICE_STATUS_STOPPING = 4;
+  SERVICE_STATUS_FAILED = 5;
+}
+
+message Service {
+  string name = 1;
+  string description = 2;
+  string command = 3;
+  repeated string args = 4;
+  repeated string environment = 5;
+  ServiceStatus status = 6;
+}

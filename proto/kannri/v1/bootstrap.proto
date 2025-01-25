@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package kannri.v1;
+
+import "kannri/v1/manager.proto";
+
+option go_package = "github.com/aita/kannri/kannripb/kanri/v1";
+
+message Bootstrap {
+  string version = 1;
+  repeated CreateServiceRequest services = 2;
+}
